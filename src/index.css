@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0f1e;
+  --color-surface: #111827;
+  --color-surface-2: #1a2236;
+  --color-border: #1e2d45;
+  --color-foreground: #f0f4ff;
+  --color-muted: #8896b0;
+  --color-primary: #10b981;
+  --color-primary-dark: #059669;
+  --color-primary-glow: rgba(16, 185, 129, 0.15);
+  --color-accent: #6366f1;
+  --color-accent-glow: rgba(99, 102, 241, 0.15);
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: #0a0f1e;
+  color: #f0f4ff;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #111827;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2d45;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--progress-width); }
+}
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(16, 185, 129, 0.6); }
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(16, 185, 129, 0.3);
+}
